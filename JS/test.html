@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+
+<body style="background-color: blueviolet;">
+    <div class="mainContainer">
+
+        <form action="" method="POST">
+            <div class="box">
+
+                <label for="first_name">First Name:</label><br>
+                <input type="text" id="firstname" name="firstname" placeholder="Text input" required><br>
+
+                <label for="last_name">Last Name:</label><br>
+                <input type="text" id="lastname" name="lastname" placeholder="Text input" required><br>
+
+
+                <label for="Address">Address:</label><br>
+                <input type="text" id="Address" name="Address" maxlength="35"><br>
+
+
+                <label for="Bdate">Select Date of Birth:</label><br>
+                <input type="date" id="Bdate" name="Bdate"><br>
+
+                <label for="Gender">Gender:</label> <br>
+                <select id="Gender" name="gender">
+                    <option value="Fimale">Fimale</option>
+                    <option value="Male">Male</option>
+                </select> <br>
+                <label for="Notes">Notes:</label><br>
+                <textarea name="Notes" rows="10" cols="25">Notes </textarea><br>
+                <input type="submit" onclick="create_table()" value="Submit" style="color:rgb(250, 250, 253); background-color: rgb(95, 212, 69); width:25%; font-size: 18px; "><br>
+            </div>
+        </form>
+
+    </div>
+    <!-- <div class="DataTable">
+
+        
+
+            <table>
+                
+               <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>FName</th>
+                        <th>Lname</th>
+                        <th>Address</th>
+                        <th>Date</th>
+                        <th>Gender</th>
+                    </tr>
+                </thead>
+                <tbody>
+                
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+               
+                
+                </tbody>
+
+            </table>
+        
+      
+    </div>
+    <p id="sth"></p> -->
+    <script>
+        let fname = document.getElementById("firstname").value;
+        localStorage.setItem("fnamee",fname);
+        let fnamee = localStorage.getItem("fnamee");
+    
+       
+        function create_table() {
+           
+            var body = document.getElementsByTagName("body")[0];
+            var tb = document.createElement("table");
+            var tBody = document.createElement("tbody");
+        
+          
+            for (var i = 0; i < 2; i++) {
+
+            var row = document.createElement("tr");
+        
+            for (var j = 0; j < 2; j++) {
+                var cell = document.createElement("td");
+                var cellText = document.createTextNode(`${fnamee}`);
+                cell.appendChild(cellText);
+                row.appendChild(cell);
+            }
+        
+            
+            tBody.appendChild(row);
+            }
+        
+           
+            tb.appendChild(tBody);
+          
+            body.appendChild(tb);
+           
+            tbl.setAttribute("border", "2");
+        }
+
+        // let fname = document.getElementById("firstname").value;
+        // if(window.localStorage){
+        //     localStorage.setItem("fnamee",fname);
+        //     let fnamee = localStorage.getItem("fnamee");
+        //     // let message = document.getElementById("sth");
+        //     // submit.addEventListener("click",()=>{
+        //     //     message.innerHTML= fnamee;
+        //     // })
+
+        //     cell.innerHTML=fnamee;
+        // }else{
+        //     cell.innerHTML= "No result"
+        // }
+
+    </script>
+</body>
+
+</html>
