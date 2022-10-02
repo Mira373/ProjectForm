@@ -1,5 +1,7 @@
+
 <?php
-if (isset($_POST['Delete'])){
+ include 'Connection.php';
+if (isset($_POST['ID'])){
 
 $delete_query="DELETE FROM datatable WHERE ID={$_POST['ID']}";
 

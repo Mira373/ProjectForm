@@ -97,7 +97,8 @@
                             <td><?= $row['Gender'] ?></td>
                             <td><form action='delete.php?ID=<?= $row['ID'] ?>' method="post">
                             <input type="hidden" name="ID" value="<?= $row['ID'] ?>">
-                            <input type="button" name="Delete" value="Delete">
+                            <!-- <input type="button" name="Delete" value="Delete"> -->
+                            <button type="button">Delte</button>
                             </form></td>
                            
                             
